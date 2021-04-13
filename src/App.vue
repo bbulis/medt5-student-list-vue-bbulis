@@ -1,32 +1,41 @@
 <template>
   <div id="app">
-    <div id="nav">
+<!--    <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
+    </div>-->
+    <div class="header">
+      <h1>Schüler Liste</h1>
+      <p>Schuljahr 2020/21</p>
     </div>
-    <router-view />
+    <div class="container_own">
+      <router-view />
+    </div>
   </div>
 </template>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: #2c3e50;
+}
+
+.container_own {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.header {
   text-align: center;
-  color: #2c3e50;
+  padding: 10px;
+  background: #44b78b;
+  color: white;
+  font-size: 40px;
 }
 
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+h1 {
+  font-size: 60px !important;
 }
 </style>

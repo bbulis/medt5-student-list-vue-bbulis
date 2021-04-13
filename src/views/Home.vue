@@ -1,18 +1,37 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <StudentList v-bind:students="students" />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import StudentList from "@/components/StudentList";
 
 export default {
   name: "Home",
+  data() {
+    return {
+      students: [
+        {
+          id: 0,
+          firstname: "Benjamin",
+          lastname: "Bulis",
+          age: 21,
+          phone: "0664/3398741",
+        },
+        {
+          id: 1,
+          firstname: "Florian",
+          lastname: "Medved",
+          age: 22,
+          phone: "0664/0012345",
+        },
+      ],
+    };
+  },
   components: {
-    HelloWorld,
+    StudentList,
   },
 };
 </script>
