@@ -1,12 +1,17 @@
 <template>
   <div class="home">
+    <AddStudent />
     <StudentList v-bind:students="students" v-on:delete="deleteItem" />
+    <a class="btn-floating btn-large waves-effect waves-light add-button right">
+      <i class="material-icons">add</i>
+    </a>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import StudentList from "@/components/StudentList";
+import AddStudent from "@/components/AddStudent";
 
 export default {
   name: "Home",
@@ -31,6 +36,7 @@ export default {
     };
   },
   components: {
+    AddStudent,
     StudentList,
   },
   methods: {
@@ -42,3 +48,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.add-button {
+  color: #44b78b;
+}
+</style>
