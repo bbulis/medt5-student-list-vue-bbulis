@@ -37,7 +37,7 @@ export default {
     deleteItem(id) {
       let i = this.students.map((item) => item.id).indexOf(id);
       this.students.splice(i, 1);
-      console.table(this.students)
+      console.table(this.students);
     },
   },
 };
