@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <StudentList v-bind:students="students" />
+    <StudentList v-bind:students="students" v-on:delete="deleteItem" />
   </div>
 </template>
 
@@ -32,6 +32,13 @@ export default {
   },
   components: {
     StudentList,
+  },
+  methods: {
+    deleteItem(id) {
+      let i = this.students.map((item) => item.id).indexOf(id);
+      this.students.splice(i, 1);
+      console.table(this.students)
+    },
   },
 };
 </script>

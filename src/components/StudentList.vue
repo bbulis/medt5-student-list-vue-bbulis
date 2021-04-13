@@ -5,6 +5,7 @@
       v-for="student in this.students"
       v-bind:key="student.id"
       :student="student"
+      v-on="$listeners"
     />
   </ul>
 </template>
