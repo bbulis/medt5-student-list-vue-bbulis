@@ -1,10 +1,7 @@
 <template>
   <div class="home">
-    <AddStudent />
+    <AddStudent v-on:addStudent="addItem" />
     <StudentList v-bind:students="students" v-on:delete="deleteItem" />
-    <a class="btn-floating btn-large waves-effect waves-light add-button right">
-      <i class="material-icons">add</i>
-    </a>
   </div>
 </template>
 
@@ -33,6 +30,7 @@ export default {
           phone: "0664/0012345",
         },
       ],
+      counter: 2,
     };
   },
   components: {
@@ -40,6 +38,12 @@ export default {
     StudentList,
   },
   methods: {
+    addItem(object) {
+      object.id = this.counter;
+      this.counter += 1;
+      this.students.push(object);
+      console.table(this.students);
+    },
     deleteItem(id) {
       let i = this.students.map((item) => item.id).indexOf(id);
       this.students.splice(i, 1);
@@ -49,8 +53,4 @@ export default {
 };
 </script>
 
-<style scoped>
-.add-button {
-  color: #44b78b;
-}
-</style>
+<style scoped></style>
